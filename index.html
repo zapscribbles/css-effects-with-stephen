@@ -1,0 +1,103 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link href="reset.css" rel="stylesheet"></link>
+<style>
+.noise {   
+    height: 100%;
+    width: 500px;
+    background: linear-gradient(90deg, rgb(209, 34, 195), transparent), url(svg-noise.svg);
+    filter: contrast(170%) brightness(1000%);
+   
+   
+    
+}
+.btn:hover .move {
+    /* background: linear-gradient(270deg, rgb(209, 34, 195), transparent), url(svg-noise.svg); */
+    transform: translateX(0px);
+}
+
+.secondNoise {
+    height: 100%;
+    width: 500px;
+    background: linear-gradient(270deg, rgb(209, 34, 195), transparent), url(svg-noise.svg);
+    filter: contrast(170%) brightness(1000%);   
+}
+
+.move {
+    height: 500px;
+    width: 1000px;
+    display: flex;
+    flex-direction: row;
+    transform: translateX(-500px) ;
+    transition: transform 2s;
+}
+
+.overlay {   
+   position: absolute;
+   top: 0;
+    width: 100%;
+    height: 100%;
+    background: moccasin;
+    mix-blend-mode: multiply;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.isolate {
+    isolation: isolate;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+section, .btn {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  box-shadow: rgb(50 50 93 / 20%) 0px 30px 60px -12px, rgb(0 0 0 / 28%) 0px 18px 36px -18px;}
+
+/* Chrome-specific */
+@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
+  .noise {
+    filter: contrast(290%) brightness(1000%);
+  }
+}
+
+.btn {
+    padding: 0;
+    border: 1px solid red;
+    margin: 50px;
+    font-size: 36px;
+    overflow: hidden;
+}
+
+
+
+
+
+</style>
+</head>
+<body>
+    <!-- <section>
+    <div class="isolate">
+        <div class="noise"></div>
+        <div class="overlay"></div>
+    </div>
+    </section> -->
+  
+    <button class="btn isolate">
+        <div class="move">
+        <div class="secondNoise"></div>
+        <div class="noise"></div>
+        </div>
+        <div class="overlay">
+            <span>Hello</span>
+        </div>    
+    </button>
+   
+</body>
+</html>
