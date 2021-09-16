@@ -1,0 +1,67 @@
+.og-noise {
+    height: 100%;
+    width: 500px;
+    background: linear-gradient(90deg, rgb(209, 34, 195), transparent), url(svg-noise.svg);
+    filter: contrast(170%) brightness(1000%);
+}
+.btn:hover .move {
+    /* background: linear-gradient(270deg, rgb(209, 34, 195), transparent), url(svg-noise.svg); */
+    transform: translateX(0px);
+}
+
+.secondNoise {
+    height: 100%;
+    width: 500px;
+    background: linear-gradient(270deg, rgb(209, 34, 195), transparent), url(svg-noise.svg);
+    filter: contrast(170%) brightness(1000%);
+}
+
+.move {
+    height: 500px;
+    width: 1000px;
+    display: flex;
+    flex-direction: row;
+    transform: translateX(-500px);
+    transition: transform 0.5s;
+}
+
+.og-overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: moccasin;
+    mix-blend-mode: multiply;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.og-isolate {
+    isolation: isolate;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+section,
+.btn {
+    position: relative;
+    width: 500px;
+    height: 150px;
+    box-shadow: rgb(50 50 93 / 20%) 0px 30px 60px -12px, rgb(0 0 0 / 28%) 0px 18px 36px -18px;
+}
+
+/* Chrome-specific */
+@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+    .og-noise {
+        filter: contrast(290%) brightness(1000%);
+    }
+}
+
+.btn {
+    padding: 0;
+    border: 1px solid red;
+    margin: 50px;
+    font-size: 36px;
+    overflow: hidden;
+}
