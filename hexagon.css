@@ -1,0 +1,60 @@
+#hexagon {
+    width: 400px;
+    height: 400px;
+    margin: 30px;
+    display: grid;
+    grid-template-rows: 1fr;
+}
+
+#hexagon .body,
+#hexagon .border {
+    grid-row-start: 1;
+    grid-column-start: 1;
+}
+
+#hexagon .body {
+    position: relative;
+    box-shadow: rgb(50 50 93 / 20%) 0px 30px 60px -12px, rgb(0 0 0 / 28%) 0px 18px 36px -18px;
+    /* border: 2px solid black; */
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    transform: scale(0.95);
+}
+
+#hexagon .border {
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    background-color: #ff5200;
+    z-index: -10;
+    width: 100%;
+    height: 100%;
+    /* display: none; */
+}
+
+#hexagon .noise {
+    height: 100%;
+    background: linear-gradient(130deg, #ff5200, transparent), url(svg-noise.svg);
+    /* filter: contrast(170%) brightness(1000%); */
+}
+
+/* Chrome-specific */
+@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+    #hexagon .noise {
+        filter: contrast(190%) brightness(200%);
+    }
+}
+
+#hexagon .isolate {
+    isolation: isolate;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#hexagon .overlay {
+    position: absolute;
+    top: 0;
+    /* z-index: -10; */
+    width: 100%;
+    height: 100%;
+    background: yellow;
+    mix-blend-mode: multiply;
+}
